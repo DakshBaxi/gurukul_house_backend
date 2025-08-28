@@ -15,7 +15,6 @@ connectDB();
 const PORT= process.env.PORT as string
 console.log(PORT);
 app.listen(PORT,()=>{
-
     console.log(`Server is listning on ${PORT}`)
 })
 

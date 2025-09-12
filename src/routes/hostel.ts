@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   // await mappingResidentToHostel();
  const page = Number(req.query.page) || 1;
 const limit = Number(req.query.limit) || 10;
-  const hostels = await Hostel.find()
+  const hostels = await Hostel.find().sort({ createdAt: -1 })
   .sort({ totalRemainingBeds: -1, name: 1 })
   .skip((page - 1) * limit)
   .limit(limit);

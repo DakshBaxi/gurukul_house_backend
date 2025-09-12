@@ -41,6 +41,7 @@ export interface IHostel extends Document {
     }[];
     gallery?: string[];
     usps?: string[];
+    comming_soon?:true;
 }
 
 // 2. Define the schema
@@ -82,7 +83,8 @@ const hostelSchema: Schema<IHostel> = new Schema<IHostel>({
         icon: { type: String }
     }],
     gallery: [{ type: String }],
-    usps: [{ type: String }]
+    usps: [{ type: String }],
+    comming_soon: { type: Boolean, default: false },
 });
 
 // 3. Define and export the model
